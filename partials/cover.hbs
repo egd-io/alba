@@ -1,21 +1,30 @@
 <div class="cover container">
     <div class="cover-content">
-        {{#if @site.icon}}
+        {{#is "home"}}
             <div class="cover-icon">
-                <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                <picture class="cover-icon-image">
+                    <source src="https://cdn.egd.io/static/img/avatar.webp" type="image/webp">
+                    <source src="https://cdn.egd.io/static/img/avatar.jxr" type="image/jxr">
+                    <source src="https://cdn.egd.io/static/img/avatar.jp2" type="image/jp2">
+                    <source src="https://cdn.egd.io/static/img/avatar.png" type="image/png">
+                    <img class="cover-icon-image" src="https://cdn.egd.io/static/img/avatar.png" alt="">
+                </picture>
             </div>
-        {{/if}}
-
-        <h1>{{@site.title}}</h1>
-        {{#if @site.description}}
+            <h1>Ethan Gregory Dodge</h1>
             <div class="cover-description">{{@site.description}}</div>
-        {{/if}}
-
-        {{#unless @member}}
-            <div class="cover-cta">
-                <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
-                <button class="button button-secondary members-login" data-portal="signin">Login</button>
-            </div>
-        {{/unless}}
+            {{> cover-cta}}
+        {{/is}}
+        {{#page}}
+            {{#has slug="surveillance"}}
+                {{> cover-channel}}
+                {{> cover-cta}}
+            {{/has}}
+            {{#has slug="commentary"}}
+                {{> cover-channel}}
+            {{/has}}
+            {{#has slug="tech"}}
+                {{> cover-channel}}
+            {{/has}}
+        {{/page}}
     </div>
 </div>

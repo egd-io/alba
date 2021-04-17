@@ -1,0 +1,20 @@
+routes:
+  /:
+    template: default 
+  /commentary/:
+    controller: channel
+    filter: tag:hash-commentary
+    data: page.commentary
+  /surveillance/:
+    controller: channel
+    filter: tag:hash-surveillance
+    data: page.surveillance
+  /tech/:
+    controller: channel
+    filter: tag:hash-tech
+    data: page.tech
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
+
