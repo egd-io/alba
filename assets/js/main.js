@@ -80,7 +80,7 @@ function subMenu() {
     if (separator.length) {
         separator.nextAll('.menu-item').wrapAll('<div class="sub-menu" />');
         separator.replaceWith(
-            '<i class="fas fa-ellipsis-h" aria-hidden="true"></i>'
+            '<button class="button-icon menu-item menu-item-button menu-item-more" aria-label="More"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></button>'
         );
 
         var toggle = mainNav.find('.menu-item-more');

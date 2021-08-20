@@ -1,6 +1,31 @@
-{{#get "posts" limit="6" filter="tag:hash-surveillance"}}    
+{{#get "posts" filter="featured:true" limit="6" as |featured|}}
+    {{#if featured}}
         <section class="featured-wrapper container">
-            <h2 class="featured-title"><a href="/surveillance/">Surveillance</a></h2>
+            <a href="/features/" aria-label="Features"><h2 class="featured-title">Features</h2></a>
+            <div class="featured-feed owl">
+                {{#foreach featured}}
+                    <article class="{{post_class}}">
+                        {{#if feature_image}}
+                            <div class="u-placeholder horizontal">
+                                <img class="lazyload u-object-fit"
+                                    data-srcset="{{> srcset}}" data-sizes="auto"
+                                    src="{{img_url feature_image size="m"}}"
+                                    srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    alt="{{title}}">
+                            </div>
+                        {{/if}}
+                        <h3 class="post-title">{{title}}</h3>
+                        <a class="u-permalink" href={{url}}
+                            aria-label="{{title}}"></a>
+                    </article>
+                {{/foreach}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}
+{{#get "posts" limit="6" filter="tag:hash-surveil-links"}}    
+        <section class="featured-wrapper container">
+            <a href="/newsletter/surveillance/" aria-label="Surveil-links Newsletter & Podcast"><h2 class="featured-title">Surveil-links Newsletter & Podcast</h2></a>
             <div class="featured-feed owl">
                 {{#foreach posts}}
                     <article class="{{post_class}}">
@@ -21,9 +46,9 @@
             </div>
         </section>
 {{/get}}
-{{#get "posts" limit="6" filter="tag:hash-commentary"}}    
+{{#get "posts" limit="6" filter="tag:hash-blog"}}    
         <section class="featured-wrapper container">
-            <h2 class="featured-title">Commentary</h2>
+            <a href="/blog/" aria-label="Blog"><h2 class="featured-title">Blog</h2></a>
             <div class="featured-feed owl">
                 {{#foreach posts}}
                     <article class="{{post_class}}">

@@ -7,24 +7,24 @@
                     <source src="https://cdn.egd.io/static/img/avatar.jxr" type="image/jxr">
                     <source src="https://cdn.egd.io/static/img/avatar.jp2" type="image/jp2">
                     <source src="https://cdn.egd.io/static/img/avatar.png" type="image/png">
-                    <img class="cover-icon-image" src="https://cdn.egd.io/static/img/avatar.png" alt="">
+                    <img class="cover-icon-image" src="https://cdn.egd.io/static/img/avatar.png" alt="Picture of Ethan Gregory Dodge">
                 </picture>
             </div>
             <h1>Ethan Gregory Dodge</h1>
             <div class="cover-description">{{@site.description}}</div>
             {{> cover-cta}}
         {{/is}}
-        {{#page}}
-            {{#has slug="surveillance"}}
-                {{> cover-channel}}
-                {{> cover-cta}}
-            {{/has}}
-            {{#has slug="commentary"}}
-                {{> cover-channel}}
-            {{/has}}
-            {{#has slug="tech"}}
-                {{> cover-channel}}
-            {{/has}}
-        {{/page}}
+        {{#has slug="blog-page-data" slug="feature-page-data" slug="surveil-links-page-data"}}
+            {{> cover-index}}
+            {{> cover-cta}}
+        {{/has}}
+        {{#has slug="surveil-links-page-data"}}
+            {{> cover-index}}
+            {{> cover-cta}}
+        {{/has}}
+        {{#has slug="feature-page-data"}}
+            {{> cover-index}}
+            {{> cover-cta}}
+        {{/has}}
     </div>
 </div>

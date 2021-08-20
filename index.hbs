@@ -2,6 +2,9 @@
 
 <div class="content-area">
     <main class="site-main">
+    {{#page}}
+      {{> "post-header"}}
+    {{/page}}
         <div class="post-feed container medium">
             {{#foreach posts}}
                 {{> "loop"}}

@@ -1,18 +1,22 @@
 routes:
   /:
     template: default 
-  /commentary/:
-    controller: channel
-    filter: tag:hash-commentary
-    data: page.commentary
-  /surveillance/:
-    controller: channel
-    filter: tag:hash-surveillance
-    data: page.surveillance
-  /tech/:
-    controller: channel
-    filter: tag:hash-tech
-    data: page.tech
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: index 
+    filter: tag:hash-blog
+    data: page.blog-page-data 
+  /feature/:
+    permalink: /feature/{slug}/
+    template: index 
+    filter: featured:true 
+    data: page.feature-page-data 
+  /newsletter/surveillance/:
+    permalink: /newsletter/surveillance/{slug}/
+    template: index 
+    filter: tag:hash-surveil-links
+    data: page.surveil-links-page-data 
 
 taxonomies:
   tag: /tag/{slug}/

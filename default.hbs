@@ -62,8 +62,10 @@
 
     <div class="site">
         {{> header}}
-        {{> cover}}
-        {{> featured}}
+        {{#is "home"}}
+          {{> cover}}
+          {{> carousels}}
+        {{/is}}
         <div class="site-content">
             {{{body}}}
         </div>
