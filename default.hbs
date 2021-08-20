@@ -66,6 +66,17 @@
           {{> cover}}
           {{> carousels}}
         {{/is}}
+        {{#page}}
+          {{#has slug="blog-page-data"}}
+            {{> cover}}
+          {{/has}}
+          {{#has slug="surveil-links-page-data"}}
+            {{> cover}}
+          {{/has}}
+          {{#has slug="feature-page-data"}}
+            {{> cover}}
+          {{/has}}
+        {{/page}}
         <div class="site-content">
             {{{body}}}
         </div>

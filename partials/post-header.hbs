@@ -18,13 +18,6 @@
                 {{/primary_tag}}
             </div>
         {{/is}}
-        {{#has slug="blog-page-data" slug="feature-page-data" slug="surveil-links-page-data"}}
-          {{> cover}}
-        {{else has slug="surveil-links-page-data"}}
-          {{> cover}}
-        {{else has slug="feature-page-data"}}
-          {{> cover}}
-        {{else}}
         <h1 class="single-title">{{title}}</h1>
         {{#if custom_excerpt}}
             <div class="single-excerpt">
@@ -41,5 +34,4 @@
                 </div>
             {{/unless}}
         {{/if}}
-        {{/has}}
     </header>

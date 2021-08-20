@@ -1,8 +1,8 @@
 <div class="cover container">
     <div class="cover-content">
-        {{#is "home"}}
             <div class="cover-icon">
                 <picture class="cover-icon-image">
+                {{#is "home"}}
                     <source src="https://cdn.egd.io/static/img/avatar.webp" type="image/webp">
                     <source src="https://cdn.egd.io/static/img/avatar.jxr" type="image/jxr">
                     <source src="https://cdn.egd.io/static/img/avatar.jp2" type="image/jp2">
@@ -13,18 +13,17 @@
             <h1>Ethan Gregory Dodge</h1>
             <div class="cover-description">{{@site.description}}</div>
             {{> cover-cta}}
-        {{/is}}
-        {{#has slug="blog-page-data" slug="feature-page-data" slug="surveil-links-page-data"}}
-            {{> cover-index}}
-            {{> cover-cta}}
-        {{/has}}
-        {{#has slug="surveil-links-page-data"}}
-            {{> cover-index}}
-            {{> cover-cta}}
-        {{/has}}
-        {{#has slug="feature-page-data"}}
-            {{> cover-index}}
-            {{> cover-cta}}
-        {{/has}}
+            {{/is}}
+            {{#page}}
+              {{#has slug="blog-page-data"}}
+                {{> cover-index}}
+              {{/has}}
+              {{#has slug="surveil-links-page-data"}}
+                {{> cover-index}}
+              {{/has}}
+              {{#has slug="feature-page-data"}}
+                {{> cover-index}}
+              {{/has}}
+            {{/page}}
     </div>
 </div>

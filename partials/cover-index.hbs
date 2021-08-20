@@ -1,11 +1,12 @@
-<div class="cover-icon">
-    <picture class="cover-icon-image">
-        <source src="https://cdn.egd.io/static/img/icons/{{slug}}.webp" type="image/webp">
-        <source src="https://cdn.egd.io/static/img/icons/{{slug}}.jxr" type="image/jxr">
-        <source src="https://cdn.egd.io/static/img/icons/{{slug}}.jp2" type="image/jp2">
-        <source src="https://cdn.egd.io/static/img/icons/{{slug}}.png" type="image/png">
-        <img class="cover-icon-image" src="https://cdn.egd.io/static/img/icons/{{slug}}.png" alt="{{title}} icon">
-    </picture>
-</div>
-<h1>{{title}}</h1>
-<div class="cover-description">{{excerpt}}</div>
+{{#page}}
+          <source src="https://cdn.egd.io/static/img/icons/{{slug}}.webp" type="image/webp">
+          <source src="https://cdn.egd.io/static/img/icons/{{slug}}.jxr" type="image/jxr">
+          <source src="https://cdn.egd.io/static/img/icons/{{slug}}.jp2" type="image/jp2">
+          <source src="https://cdn.egd.io/static/img/icons/{{slug}}.png" type="image/png">
+          <img class="cover-icon-image" src="https://cdn.egd.io/static/img/icons/{{slug}}.png" alt="{{title}} icon">
+        </picture>
+      </div>
+      <h1>{{title}}</h1>
+      <div class="cover-description">{{excerpt}}</div>
+      {{> cover-cta}}
+{{/page}}
