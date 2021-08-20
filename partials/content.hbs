@@ -42,10 +42,19 @@
             {{#is "post"}}
                 {{#unless @member}}
                     <section class="single-cta">
-                        <h2 class="single-cta-title">Enjoying Surveillance Today? Subscribe and get every post directly to your inbox.</h2>
+                      {{#has tag="#surveil-links"}}
+                        <h2 class="single-cta-title">Enjoying Surveil-links? Subscribe and get every post directly to your inbox.</h2>
                         <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
                         <br>
                         <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
+                      {{else has tag="surveillance"}}
+                        <h2 class="single-cta-title">Enjoying this story? Then you'll love my weekly newsletter, Surveil-links.</h2>
+                        <a href="/newsletter/surveillance/"><button class="button single-cta-button">Check it out</button></a>
+                      {{else}}
+                        <h2 class="single-cta-title">Enjoying this post? Follow me on Twitter where I share all my posts. Check out my weekly newsletter, too!</h2>
+                        <a href="https://twitter.com/egd_io"><button class="button single-cta-button">Follow me</button></a>
+                        <a href="/newsletter/surveillance/"><button class="button single-cta-button">Newsletter</button></a>
+                      {{/has}}
                     </section>
                 {{/unless}}
             {{/is}}
